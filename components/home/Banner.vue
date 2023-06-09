@@ -2,7 +2,7 @@
   <div class="banner">
     <v-container class="welcome-container d-flex justify-center align-center">
       <div class="mt-n10 text-center">
-        <h2 class="text-h2 font-weight-bold text-blue-darken-2">
+        <h2 ref="welcome" class="text-h2 font-weight-bold text-blue-darken-2">
           Welcome to Groupify
         </h2>
         <p class="text-h5 text-grey-darken-2 font-weight-light mt-1 mb-5">
@@ -30,9 +30,19 @@
 </template>
 
 <script setup lang="ts">
-const scrolToElement = (elementId: string) => {
-  document.getElementById(elementId)?.scrollIntoView({behavior: 'smooth'})
-}
+import  { scrolToElement } from "~/utils/UIHandler"
+import gsap from "gsap"
+
+const welcome = ref(HTMLElement)
+
+onMounted(() => {
+  gsap.from(welcome.value, {
+    duration: 1.2,
+    y: '-60',
+    ease: 'bounce.out'
+  })
+})
+
 </script>
 
 <style scoped>
