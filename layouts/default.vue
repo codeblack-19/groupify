@@ -15,7 +15,9 @@
       </v-app-bar>
 
       <v-main>
-        <slot />
+        <ClientOnly>
+          <slot />
+        </ClientOnly>
       </v-main>
     </v-layout>
   </div>
