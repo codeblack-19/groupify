@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Groupify
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A web application used to split a list of names of people or items into a numbers groups by uploading a csv file.
 
 ## Setup
 
@@ -15,6 +15,13 @@ npm install
 
 # pnpm
 pnpm install
+```
+
+## Essentials
+
+Create a Mongo Db project.
+```.env
+MONGODB_URL = "Your Mongo Db Connection String"
 ```
 
 ## Development Server
@@ -38,5 +45,3 @@ Locally preview production build:
 ```bash
 npm run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
