@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     // appearance config
     css: ['vuetify/lib/styles/main.sass', '@mdi/font/css/materialdesignicons.css'],
     build: {
-        transpile: ['vuetify'],
+        transpile: ['vuetify', 'gsap'],
     },
     // pinia config
     modules: [
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
                     ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
                 ],
             }
-        ]
+        ], '@vueuse/nuxt'
     ],
     // custom directives import
     imports: {
