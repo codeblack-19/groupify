@@ -14,9 +14,7 @@
               <p>
                 {{ trend.content }}
               </p>
-              <a href="../../public/Groupify_test.csv" v-if="key == 0" download="Groupify_test.csv">
-                <v-btn color="blue-darken-2" size="small" :elevation="0" variant="outlined" class="mt-1">Download template</v-btn>
-              </a>
+              <v-btn v-if="key == 0" color="blue-darken-2" size="small" :elevation="0" variant="outlined" class="mt-1" @click="downloadTemplate">Download template</v-btn>
             </div>
           </v-timeline-item>
         </v-timeline>
@@ -27,6 +25,10 @@
 
 <script setup lang="ts">
 import ProcessTrend from "~/types/ProcessTrend"
+
+const downloadTemplate = () => {
+  return window.open('./Groupify_test.csv')
+}
 
 const trendData = ref<ProcessTrend[]>([
   {
